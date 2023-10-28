@@ -4,15 +4,15 @@ Algorithm UTCC Class
 ![image](https://github.com/dawnyson/Algorithm/assets/127817052/36e4068c-c189-4495-bf21-d9c99f698ece)
 
 
-Algorithm ตรวจจับ [, {, ( เมื่อมีเครื่องหมายเปิด จะนำเข้าใน Stack ถ้าตรวจจับ ], }, ) จะเช็คก่อนว่ามีข้อมูลใน Stack ก่อนหรือไม่
-ถ้าไม่ให้ทำการเขียน error location นี้ ถ้ามีให้ทำการตรวจเช็ค ว่าตรงกับคู่ของมันหรือไม่ ถ้าไม่อีกให้ทำการเขียน error เช่นเดิม
+Algorithm ตรวจจับ [, {, ( เมื่อมีเครื่องหมายเปิด จะนำเข้าใน Stack ถ้าตรวจจับ ], }, ) จะเช็คก่อนว่ามีข้อมูลใน Stack ก่อนหรือไม่<br>
+ถ้าไม่ให้ทำการเขียน error location นี้ ถ้ามีให้ทำการตรวจเช็ค ว่าตรงกับคู่ของมันหรือไม่ ถ้าไม่อีกให้ทำการเขียน error เช่นเดิม<br>
 
-ในการทดสอบแรก
-    def test_no_error(self):
-        test_string = '[{(Hello)}]'
-        isError, location = bracket_check(test_string)
-        self.assertEqual(isError, False)
-ค่านี้ไม่มี error ถูกต้องแล้ว เพราะการจับคู่ถูกต้อง
+ในการทดสอบแรก<br>
+    def test_no_error(self):<br>
+        test_string = '[{(Hello)}]'<br>
+        isError, location = bracket_check(test_string)<br>
+        self.assertEqual(isError, False)<br>
+ค่านี้ไม่มี error ถูกต้องแล้ว เพราะการจับคู่ถูกต้อง<br>
 
 การทดสอบที่สอง
     def test_error_1(self):
