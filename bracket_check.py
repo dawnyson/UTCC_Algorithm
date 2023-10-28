@@ -28,7 +28,4 @@ def bracket_check(str):
         is_error = True
         location.append(i)
 
-    print(is_error, location)
     return is_error, location
-
-bracket_check('{ass{][(}}{(')
