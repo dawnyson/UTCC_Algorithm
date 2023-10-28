@@ -12,10 +12,11 @@ def bracket_check(str):
     for i in range(len(str)):
         s = str[i]
         if s == '(' or s == '[' or s == '{':
-            stack.push(s)
+            #แก้ไขโดยการเพิ่ม index ไปใน stack ด้วย
+            stack.push((s, i))
         elif s == ')' or s == ']' or s == '}':
             if not stack.isEmpty():
-                p = stack.pop()
+                p, index = stack.pop()
 
                 if not ((p == '(' and s == ')') or (p == '[' and s == ']') or (p == '{' and s == '}')):
                     is_error = True
@@ -24,8 +25,10 @@ def bracket_check(str):
                 is_error = True
                 location.append(i)
 
-    if not stack.isEmpty():
+    while not stack.isEmpty():
+        #กรณีเจอวงเล็บเปิด ไม่มีการปิด ทำการฟ้องทำแหน่งที่เก็บ stack ไปเลย
+        p, index = stack.pop()
         is_error = True
-        location.append(i)
+        location.append(index)
 
     return is_error, location
